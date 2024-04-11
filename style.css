@@ -93,3 +93,11 @@ img {
 .btn-big {
     flex: 1;
 }
+.btn-yellow {
+   background-color: #f8b400;
+}
+.btn-white {
+    color: #2c786c;
+    background-color: lemonchiffon;
+    border: 3px solid grey;
+}
