@@ -30,11 +30,38 @@ img {
 
 .container {
     height: 70vh;
-    width: 40vw;
+    width: 36vw;
     background: #2c786c;
     border-radius: 24px;
     box-shadow: 39px 56px 0px 1px rgba(44,120,108,0.2);
     -webkit-box-shadow: 39px 56px 0px 1px rgba(44,120,108,0.2);
     -moz-box-shadow: 39px 56px 0px 1px rgba(44,120,108,0.2);
+}
+
+.topHalf {
+    height: 30%;
+    background-color: #004445;
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 24px;
+}
+
+.solarPort {
+    width: 60%;
+    height: 24px;
+    background-color: #140b00;
+    border-radius: 16px;
+    align-self: flex-end;
+}
+
+.displayScreen {
+    width: 100%;
+    height: 64px;
+    background-color: #faf5e4;
+    border-radius: 16px;
 }
 
