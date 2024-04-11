@@ -13,30 +13,44 @@ function reset() {
 
 keypad.addEventListener("click", (e) => {
     let pressed = e.target.textContent;
-    display.textContent = pressed;
+    let answer;
 
     if (pressed == 'AC') {
         display.textContent = "";
         reset();
     } else if (isNumber(pressed)) {
         if (operator === null) {
-            firstNum = pressed;
+            firstNum = (firstNum) ? firstNum + pressed : pressed;
+            display.textContent = firstNum;
         }
         else if (operator) {
-            secondNum = pressed;
+            secondNum = (secondNum) ? secondNum + pressed : pressed;
+            display.textContent = secondNum;
         }
     } else if (pressed === '/' || pressed === '-' || pressed === '+' || pressed === 'x') {
         if (!firstNum) {
-            display.textContent = "ERR /must have number"
+            display.textContent = "ERR /no num"
             reset();
+        } else if (secondNum) {
+            answer = operate(operator, firstNum, secondNum)
+            display.textContent = (answer % 1 !== 0) ? answer.toFixed(3) : answer;
+            operator = pressed;
+            firstNum = answer;
+            secondNum = null;
+
         } else {
             operator = pressed;
+            display.textContent = operator;
+
         }
     } else if (pressed === '=') {
         if (firstNum && secondNum && operator) {
-            display.textContent = operate(operator, firstNum, secondNum);
+            answer = operate(operator, firstNum, secondNum)
+            display.textContent = (answer % 1 !== 0) ? answer.toFixed(3) : answer;
+            reset();
+            firstNum = answer;
         } else {
-            display.textContent = "ERR /invalid operation";
+            display.textContent = "ERR /invalid";
             reset();
         }
     }
@@ -77,7 +91,7 @@ function operate(op, a, b) {
             return multiply(a, b);
             break;
         case '/':
-            return divide(a, b);
+            return (+b !== 0) ? divide(a, b) : "ERROR";
             break;
         default:
             return "ERROR";
