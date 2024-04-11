@@ -64,6 +64,10 @@ img {
     background-color: #faf5e4;
     border-radius: 16px;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: xxx-large;
+    padding: 20px;
 }
 
 .bottomHalf {
