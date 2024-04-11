@@ -28,6 +28,8 @@ img {
     height: auto;
 }
 
+
+
 .container {
     height: 527px;
     max-width: 355px;
@@ -67,6 +69,7 @@ img {
     justify-content: flex-end;
     align-items: center;
     font-size: xxx-large;
+    font-family: "Orbitron", sans-serif;
     padding: 20px;
 }
 
@@ -76,6 +79,7 @@ img {
     gap: 18px;
     flex-wrap: wrap;
     margin-top: 40px;
+    font-family: 'Rubik', sans-serif;
 }
 .row {
     display: flex;
